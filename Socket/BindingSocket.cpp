@@ -12,8 +12,10 @@
 // PASS Parameters to Parent Class Socket
 WEBLIBV1::BindingSocket::BindingSocket(int pDomain, int pService, int pProtocal, int pPort, u_long pInterface) : 
         Socket(pDomain, pService, pProtocal, pPort, pInterface){
+            std::cout<< "Socket "<< pPort <<" Binding" <<std::endl;
             Set_Connection(Connect_Socket(Get_Socket(),Get_Address()));
             Test_Connection(Get_Connection());
+            std::cout<< "Socket "<< pPort <<" Binded"<<std::endl;
         };
 
 int WEBLIBV1::BindingSocket::Connect_Socket(int pSock, struct sockaddr_in pAddress){
